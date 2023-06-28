@@ -11,31 +11,30 @@ import axios from 'axios'
 
 export default {
   name: 'Dashboard',
-  computed: {
-    ...mapGetters([
-      'name'
-    ])
-  },
   data() {
     return {
       msg: ''
     }
   },
-  methods: {
-    getMessage() {
-      const path = 'http://127.0.0.1:5050/';
-      axios.get(path)
-        .then((res) => {
-          this.msg = res.data;
-          console.log("######",this.msg)
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
+  computed: {
+    ...mapGetters([
+      'name'
+    ])
   },
   created() {
-    this.getMessage();
+    this.getMessage()
+  },
+  methods: {
+    getMessage() {
+      const path = 'http://127.0.0.1:5050/'
+      axios.get(path)
+        .then((res) => {
+          this.msg = res.data
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
   }
 }
 </script>
@@ -43,11 +42,11 @@ export default {
 <style lang="scss" scoped>
 .dashboard {
   &-container {
-    margin: 30px;
+    margin: 30px
   }
   &-text {
     font-size: 30px;
-    line-height: 46px;
+    line-height: 46px
   }
 }
 </style>
