@@ -230,7 +230,6 @@ export default {
       }
     },
     handleCreate() {
-      console.log("1111")
       this.resetTemp()
       this.dialogStatus = 'create'
       this.dialogFormVisible = true
