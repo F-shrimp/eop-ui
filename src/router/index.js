@@ -170,6 +170,28 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    path: '/Serverop',
+    redirect: '/serverop',
+    component: Layout,
+    name: 'ServerOperation',
+    meta: { title: '服务器操作', icon: 'international' },
+    children: [
+        {
+          path: 'overinsured',
+          component: () => import('@/views/serveroper/overinsured/index'),
+          name: 'OverInsured',
+          meta: { title: '过保替换' }
+        },
+        {
+          path: 'maintenance',
+          component: () => import('@/views/serveroper/maintenance/index'),
+          name: 'Maintenance',
+          meta: { title: '服务器维护' }
+        },
+    ]
+  },
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

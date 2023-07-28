@@ -36,6 +36,14 @@ module.exports = {
       warnings: false,
       errors: true
     },
+    proxy: {
+      [process.env.BACKGROUND_APPLICATION_URL]: {
+        target: 'http://127.0.0.1:5050/',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: { ['^' + process.env.BACKGROUND_APPLICATION_URL]: '' }
+      }
+    },
     before: require('./mock/mock-server.js')
   },
   configureWebpack: {
