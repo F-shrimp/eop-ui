@@ -2,25 +2,10 @@ import request from '@/utils/request'
 
 export function fetchList(query) {
   return request({
-    url: 'http://127.0.0.1:5050/show_apinfo',
+    url: 'http://127.0.0.1:5050/api/mana_info/show_info/',
+    // url: 'http://127.0.0.1:5050/show_apinfo',
     method: 'get',
     params: query
-  })
-}
-
-export function fetchArticle(id) {
-  return request({
-    url: '/vue-element-admin/article/detail',
-    method: 'get',
-    params: { id }
-  })
-}
-
-export function fetchPv(pv) {
-  return request({
-    url: '/vue-element-admin/article/pv',
-    method: 'get',
-    params: { pv }
   })
 }
 
@@ -34,7 +19,8 @@ export function createrespecInfo(data) {
 
 export function updaterespecInfo(data) {
   return request({
-    url: 'http://127.0.0.1:5050/update_info',
+    url: 'http://127.0.0.1:5050/api/mana_info/update_info/',
+    // url: 'http://127.0.0.1:5050/update_info',
     method: 'get',
     params: data
   })
@@ -42,7 +28,7 @@ export function updaterespecInfo(data) {
 
 export function findrespecInfo(data) {
   return request({
-    url: 'http://127.0.0.1:5050/show_other_re',
+    url: 'http://127.0.0.1:5050/api/mana_info/show_rdinfo',
     method: 'get',
     params: data
   })

@@ -169,25 +169,24 @@ export const constantRoutes = [
       }
     ]
   },
-
   {
-    path: '/Serverop',
+    path: '/serverop',
     redirect: '/serverop',
     component: Layout,
-    name: 'ServerOperation',
+    name: 'Cation',
     meta: { title: '服务器操作', icon: 'international' },
     children: [
         {
           path: 'overinsured',
-          component: () => import('@/views/serveroper/overinsured/index'),
+          component: () => import('@/views/serveroper/expansion/index'),
           name: 'OverInsured',
-          meta: { title: '过保替换' }
+          meta: { title: '快速扩容' }
         },
         {
           path: 'maintenance',
-          component: () => import('@/views/serveroper/maintenance/index'),
+          component: () => import('@/views/serveroper/reduction/index'),
           name: 'Maintenance',
-          meta: { title: '服务器维护' }
+          meta: { title: '快速缩容' }
         },
     ]
   },
